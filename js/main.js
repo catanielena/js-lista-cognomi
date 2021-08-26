@@ -14,3 +14,23 @@ console.log(surnamesListSorted);
 for ( var i=0; i<surnamesListSorted.length; i++ ) {
     console.log((i+1) + '-' + surnamesListSorted[i]);
 }
+
+
+function ulList() {
+
+    // Get list once and store reference
+    var list = document.getElementById("surnanes-list");
+    // Declare variables 
+    var li = 0;
+    // for loop should run through spelling list array and create list items 
+    for (var i = 0; i < surnamesListSorted.length; i++ ) { 
+      // Create new LI
+      li = document.createElement("li");
+      // Append the word
+      li.appendChild(document.createTextNode(surnamesListSorted[i]));
+      // Add to list
+      list.appendChild(li);
+    }
+  }
+
+window.onload = ulList;
