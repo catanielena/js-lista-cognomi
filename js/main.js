@@ -33,4 +33,4 @@ function ulList() {
     }
   }
 
-window.onload = ulList;
+document.getElementById('surnanes-list').appendChild(ulList());
