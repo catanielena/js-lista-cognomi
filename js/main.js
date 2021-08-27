@@ -2,18 +2,25 @@
 var lastName = prompt('Inserisci il tuo cognome');
 console.log(lastName);
 
-var lastNameCap = lastName[0].toUpperCase() + lastName.slice(1).toLowerCase();
-console.log(lastNameCap);
+var lastName = lastName[0].toUpperCase() + lastName.slice(1).toLowerCase();
+console.log(lastName);
 // 2. inseriscilo in un array con altri cognomi: ‘Bianchi’, ‘Neri’, ‘Rossi’, ‘Verdi’, ‘Gialli’
 var surnamesList = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
-surnamesList.push(lastNameCap);
+surnamesList.push(lastName);
 // 3. stampa la lista ordinata alfabeticamente
 var surnamesListSorted = surnamesList.sort();
 console.log(surnamesListSorted);
 // 4. scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
-for ( var i=0; i<surnamesListSorted.length; i++ ) {
-    console.log((i+1) + '-' + surnamesListSorted[i]);
+var i = 0;
+var indexPosition = -1;
+while (i<surnamesListSorted.length && indexPosition == -1) {
+  if (surnamesListSorted[i] == lastName) {
+    indexPosition = i;
+  }
+  i++;
 }
+console.log(indexPosition + '-' + lastName);
+
 
 
 function ulList() {
@@ -31,6 +38,6 @@ function ulList() {
       // Add to list
       list.appendChild(li);
     }
-  }
+}
 
 document.getElementById('surnanes-list').appendChild(ulList());
