@@ -34,10 +34,11 @@ function ulList() {
       // Create new LI
       li = document.createElement("li");
       // Append the word
-      li.appendChild(document.createTextNode(surnamesListSorted[i]));
+      li.appendChild(document.createTextNode((i+1) + '<' + surnamesListSorted[i]));
       // Add to list
       list.appendChild(li);
     }
 }
+
 
 document.getElementById('surnanes-list').appendChild(ulList());
